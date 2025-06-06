@@ -6,6 +6,14 @@
     <title>Document</title>
   </head>
   <body>
+    {% for listing in listings %}
+    <div class="card">
+      <img src="{{listing.image.url}}" alt="pic of {{listing.title}}" />
+      <h3>{{listing.title}}</h3>
+      <p>{{listing.description}}</p>
+      <p>Price: {{listing.price}}</p>
+    </div>
+    {% endfor %}
     <h1>Hello your Api client is currently working properly</h1>
   </body>
 </html>
