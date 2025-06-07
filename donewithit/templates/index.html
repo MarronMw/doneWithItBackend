@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body style="display: ruby;">
     {% for listing in listings %}
-    <div class="card">
-      <img src="{{listing.image.url}}" alt="pic of {{listing.title}}" />
-      <h3>{{listing.title}}</h3>
-      <p>{{listing.description}}</p>
-      <p>Price: {{listing.price}}</p>
+    <div class="card" style="background-color: #3bffff; width: 20rem; height: 20rem; border-radius: 10px; overflow: hidden; object-fit: cover; margin: 5px; display: flex; flex-direction: column;">
+      <img src="{{listing.image.url}}" alt="pic of {{listing.title}}" style="height: 10rem; width: 100%; object-fit: cover; flex: 4;"/>
+      <div class="info" style="flex: 1; padding: 1rem;">
+        <h3 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: rgb(255, 255, 255); text-transform: capitalize;">{{listing.title}}</h3>
+        <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 700; font-size: large;">Price: ${{listing.price}}</p>
+      </div>
     </div>
     {% endfor %}
     <h1>Hello your Api client is currently working properly</h1>
